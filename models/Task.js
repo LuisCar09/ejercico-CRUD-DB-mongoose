@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const TaskSchema = new mongoose.Schema({
     task: String,
-    completed : Boolean
+    completed : String
 },{timestamps:true})
 
 const Task = mongoose.model('Task',TaskSchema);
