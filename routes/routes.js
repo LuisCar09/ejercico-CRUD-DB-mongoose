@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const taskRoute = require('./tasks')
 const Task = require('../models/Task')
-const taskContainer = []
+
 
 router.get('/',async(req,res) => {
 
@@ -17,7 +17,7 @@ router.get('/',async(req,res) => {
     
     
 })
-// - GET /id/:_id: Endpoint para buscar tarea por id.
+
 
 router.get('/id/:_id',async(req,res) => {
     try {
@@ -31,28 +31,21 @@ router.get('/id/:_id',async(req,res) => {
     }
 })
 
-// - PUT /markAsCompleted/:_id: Endpoint para marcar una tarea como completada.
+
+router.put('/id/:_id',async(req,res) => {
+    const id = req.params._id
+    const title = req.body.title
+    const updateStatus = await Task.findByIdAndUpdate(id,{title:title},{new:true,runValidators:true})
+    res.status(200).json(updateStatus)
+})
+
 router.put('/markAsCompleted/:_id',async(req,res) => {
     const id = req.params._id
     const status = req.body.completed
-    console.log(id);
-    console.log(status);
-    
-    
     const updateStatus = await Task.findByIdAndUpdate(id,{completed:status},{new:true,runValidators: true})
-    console.log(updateStatus);
-    
-    
-    console.log('FIN DE PRUEBA');
-    
-    
-    
-    res.send(updateStatus)
+    res.status(200).json(updateStatus)
 })
 
-
-
-// - DELETE /id/:_id: Endpoint para eliminar una tarea.
 
 router.delete('/id/:_id',async(req,res) => {
     try {
