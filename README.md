@@ -4,14 +4,14 @@ Esta es una aplicación sencilla en Node.js utilizando Express con mongoose para
 
 La estructura será la siguiente:
 - config
-  - config.js // Código de la conexión a la base de datos.
+  - config.js // Código de la conexión a la base de datos. OK!
 - env
-  - .env // Aquí debe ir la MONGO_URI que nos da mongoDB Atlas
+  - .env // Aquí debe ir la MONGO_URI que nos da mongoDB Atlas OK!
 - models
-  - Task.js // Aqui ira el modelo de la tarea con los campos title, completed y los timestamps.
+  - Task.js // Aqui ira el modelo de la tarea con los campos title, completed y los timestamps. OK!
 - routes 
   - tasks.js // Aquí estarán todas las rutas
-- index.js // Añadiremos nuestro servidor, conexión a la base de datos y uniremos el resto de la aplicación
+- index.js // Añadiremos nuestro servidor, conexión a la base de datos y uniremos el resto de la aplicación OK!
 
 ## Endpoints de la API
 - POST /create: Endpoint para crear una tarea.
@@ -23,9 +23,9 @@ La estructura será la siguiente:
 
 
 1. Configuración
-- Lo primero es inicializar nuestro proyecto de node
-- Lo segundo es hacer npm install para instalar las dependencias de package.json
-- Crearemos un servidor http con express en app.js
+- Lo primero es inicializar nuestro proyecto de node OK!
+- Lo segundo es hacer npm install para instalar las dependencias de package.json OK!
+- Crearemos un servidor http con express en app.js OK!
 
 2. Paso a paso 
 - Comenzaremos a manejar los módulos y solo introduciremos lo necesario en cada uno de ellos. No se debe requerir nada que no se vaya a usar.
