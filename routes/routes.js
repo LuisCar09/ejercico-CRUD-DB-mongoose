@@ -74,7 +74,7 @@ router.delete('/id/:_id',async(req,res) => {
         }else{
             res.status(500).json({message:'User does not exists'})
         }
-        res.send(user)
+        res.json(user)
     } catch (error) {
         console.error('Error fetching task from server.',error.message);
         
