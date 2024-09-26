@@ -1,16 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Task = require('../models/Task')
+const TaskController = require('../controllers/Task.controllers')
 
-router.post('/create',async(req,res) => {
-    try {
-        const task = await Task.create(req.body)
-        res.status(201).json(task)
-    } catch (error) {
-        res
-        .status(500)
-        .send({message:'There was a problem trying to create a task'})
-    }
-})
+
+router.post('/create',TaskController.create)
 
 module.exports = router
